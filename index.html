@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Universal Gaming</title>
+	<style type="text/css">
+		::selection {
+		   background: transparent;
+		}
+		::-moz-selection {
+		   background: transparent;
+		}
+		body {
+			margin: 0;
+		}
+		.example {
+			position: absolute;
+			z-index: -1;
+			opacity: 0.5;
+		}
+		.items-block {
+			z-index: 100;
+			width: 1244px; /* 933px */
+			height: 888px; /* 666px */
+			float: left;
+			cursor:  url(img/cursor2.png) 0 0, auto;
+			background: rgba(5,6,9,1);
+background: -moz-linear-gradient(left, rgba(5,6,9,1) 0%, rgba(26,40,53,1) 29%, rgba(51,77,102,1) 71%, rgba(51,77,102,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(5,6,9,1)), color-stop(29%, rgba(26,40,53,1)), color-stop(71%, rgba(51,77,102,1)), color-stop(100%, rgba(51,77,102,1)));
+background: -webkit-linear-gradient(left, rgba(5,6,9,1) 0%, rgba(26,40,53,1) 29%, rgba(51,77,102,1) 71%, rgba(51,77,102,1) 100%);
+background: -o-linear-gradient(left, rgba(5,6,9,1) 0%, rgba(26,40,53,1) 29%, rgba(51,77,102,1) 71%, rgba(51,77,102,1) 100%);
+background: -ms-linear-gradient(left, rgba(5,6,9,1) 0%, rgba(26,40,53,1) 29%, rgba(51,77,102,1) 71%, rgba(51,77,102,1) 100%);
+background: linear-gradient(to right, rgba(5,6,9,1) 0%, rgba(26,40,53,1) 29%, rgba(51,77,102,1) 71%, rgba(51,77,102,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050609', endColorstr='#334d66', GradientType=1 );
+		}
+		.items-content {
+			z-index: 120;
+			width: 93.56913183279742%;
+			height: 90.990990990991%;
+			padding: 3.215434083601286%;
+		}
+		.items-description {
+			z-index: 140;
+			width: 30.06872852233677%;
+			height: 93%;
+			margin-right: 4.123711340206185%;
+			margin-top: 0.7%;
+			float: left;
+			background-color: rgba(0, 0, 0, 0.55);
+		}
+		.items-item_list_left_content {
+			width: 28.694158075601376%;
+			height: 96.16336633663366%;
+			margin-top: 0.7%;
+			padding-right: 2.577319587628866%;
+			float: left;
+		}
+		.items-item_list_right_content {
+			width: 34.5360824742268%;
+			height: 96.16336633663366%;
+			margin-top: 0.7%;
+			float: left;
+		}
+		.items-item_left {
+			width: 18.562874251497007%;
+			height: 5.569306930693069%;
+			margin-right: 1.7964071856287425%;
+			margin-bottom: 2.334%;
+			float: left;
+    -webkit-transition: -webkit-filter 150ms ease-out;
+    -moz-transition: -webkit-filter 150ms ease-out;
+    -o-transition: -webkit-filter 150ms ease-out;
+    transition: -webkit-filter 150ms ease-out;
+			-webkit-filter: contrast(90%);   
+		}
+		.items-item_right {
+			width: 15.422885572139304%;
+			height: 5.569306930693069%;
+			margin-right: 1.492537313432836%;
+			margin-bottom: 1.939%;
+			float: left;
+			animation: all 0.6s ease-in;
+    -webkit-transition: -webkit-filter 150ms ease-out;
+    -moz-transition: -webkit-filter 150ms ease-out;
+    -o-transition: -webkit-filter 150ms ease-out;
+    transition: -webkit-filter 150ms ease-out;
+			-webkit-filter: contrast(90%);   
+		}
+		.items-item_right:hover {
+    -webkit-transition: -webkit-filter 150ms ease-out;
+    -moz-transition: -webkit-filter 150ms ease-out;
+    -o-transition: -webkit-filter 150ms ease-out;
+    transition: -webkit-filter 150ms ease-out;
+			-webkit-filter: contrast(115%);   
+		}
+		.items-item_left:hover {
+    -webkit-transition: -webkit-filter 150ms ease-out;
+    -moz-transition: -webkit-filter 150ms ease-out;
+    -o-transition: -webkit-filter 150ms ease-out;
+    transition: -webkit-filter 150ms ease-out;
+			-webkit-filter: contrast(115%);   
+		}
+		.last {
+			margin-right: 0 !important;
+		}
+		.not_exist {
+			opacity: 0 !important;
+		}
+		.active {
+			opacity: 1;
+		}
+		.items-img {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			opacity: 1;
+		}
+		.items-item_right {
+			-webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.75);
+		}
+		.items-item_left {
+			-webkit-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 11px -2px rgba(0,0,0,0.75);
+		}
+		.items-header {
+			padding-left: 8.3%;
+			top: -99.5%;
+			width: 80%;
+		}
+	</style>
+</head>
+<body>
+<img class="example" src="img/ind22.png">
+<div class="items-block">
+	<div class="items-content">
+<img class="items-header" src="img/header_text.png">
+		<div class="items-description">
+		</div>
+		<div class="items-item_list_left_content">
+			<div class="items-item_left" id="1" onClick="item_description(this.id)">
+				<img class="items-img" src="items/1.png">
+			</div>
+			<div class="items-item_left" id="2" onClick="item_description(this.id)">
+				<img class="items-img" src="items/2.png">
+			</div>
+			<div class="items-item_left" id="3" onClick="item_description(this.id)">
+				<img class="items-img" src="items/3.png">
+			</div>
+			<div class="items-item_left" id="4" onClick="item_description(this.id)">
+				<img class="items-img" src="items/4.png">
+			</div>
+			<div class="items-item_left last" id="5" onClick="item_description(this.id)">
+				<img class="items-img" src="items/5.png">
+			</div>
+			<div class="items-item_left" id="6" onClick="item_description(this.id)">
+				<img class="items-img" src="items/6.png">
+			</div>
+			<div class="items-item_left" id="7" onClick="item_description(this.id)">
+				<img class="items-img" src="items/7.png">
+			</div>
+			<div class="items-item_left" id="8" onClick="item_description(this.id)">
+				<img class="items-img" src="items/8.png">
+			</div>
+			<div class="items-item_left" id="9" onClick="item_description(this.id)">
+				<img class="items-img" src="items/9.png">
+			</div>
+			<div class="items-item_left last" id="10" onClick="item_description(this.id)">
+				<img class="items-img" src="items/10.png">
+			</div>
+			<div class="items-item_left" id="11" onClick="item_description(this.id)">
+				<img class="items-img" src="items/11.png">
+			</div>
+			<div class="items-item_left" id="12" onClick="item_description(this.id)">
+				<img class="items-img" src="items/12.png">
+			</div>
+			<div class="items-item_left" id="13" onClick="item_description(this.id)">
+				<img class="items-img" src="items/13.png">
+			</div>
+			<div class="items-item_left" id="14" onClick="item_description(this.id)">
+				<img class="items-img" src="items/14.png">
+			</div>
+			<div class="items-item_left last" id="15" onClick="item_description(this.id)">
+				<img class="items-img" src="items/15.png">
+			</div>
+			<div class="items-item_left" id="16" onClick="item_description(this.id)">
+				<img class="items-img" src="items/16.png">
+			</div>
+			<div class="items-item_left" id="17" onClick="item_description(this.id)">
+				<img class="items-img" src="items/17.png">
+			</div>
+			<div class="items-item_left" id="18" onClick="item_description(this.id)">
+				<img class="items-img" src="items/18.png">
+			</div>
+			<div class="items-item_left" id="19" onClick="item_description(this.id)">
+				<img class="items-img" src="items/19.png">
+			</div>
+			<div class="items-item_left last" id="20" onClick="item_description(this.id)">
+				<img class="items-img" src="items/20.png">
+			</div>
+			<div class="items-item_left" id="21" onClick="item_description(this.id)">
+				<img class="items-img" src="items/21.png">
+			</div>
+			<div class="items-item_left" id="22" onClick="item_description(this.id)">
+				<img class="items-img" src="items/22.png">
+			</div>
+			<div class="items-item_left" id="23" onClick="item_description(this.id)">
+				<img class="items-img" src="items/23.png">
+			</div>
+			<div class="items-item_left" id="24" onClick="item_description(this.id)">
+				<img class="items-img" src="items/24.png">
+			</div>
+			<div class="items-item_left last" id="25" onClick="item_description(this.id)">
+				<img class="items-img" src="items/25.png">
+			</div>
+			<div class="items-item_left" id="26" onClick="item_description(this.id)">
+				<img class="items-img" src="items/26.png">
+			</div>
+			<div class="items-item_left" id="27" onClick="item_description(this.id)">
+				<img class="items-img" src="items/27.png">
+			</div>
+			<div class="items-item_left" id="28" onClick="item_description(this.id)">
+				<img class="items-img" src="items/28.png">
+			</div>
+			<div class="items-item_left" id="29" onClick="item_description(this.id)">
+				<img class="items-img" src="items/29.png">
+			</div>
+			<div class="items-item_left last" id="30" onClick="item_description(this.id)">
+				<img class="items-img" src="items/30.png">
+			</div>
+			<div class="items-item_left" id="31" onClick="item_description(this.id)">
+				<img class="items-img" src="items/31.png">
+			</div>
+			<div class="items-item_left" id="32" onClick="item_description(this.id)">
+				<img class="items-img" src="items/32.png">
+			</div>
+			<div class="items-item_left" id="33" onClick="item_description(this.id)">
+				<img class="items-img" src="items/33.png">
+			</div>
+			<div class="items-item_left" id="34" onClick="item_description(this.id)">
+				<img class="items-img" src="items/34.png">
+			</div>
+			<div class="items-item_left last" id="35" onClick="item_description(this.id)">
+				<img class="items-img" src="items/35.png">
+			</div>
+			<div class="items-item_left" id="36" onClick="item_description(this.id)">
+				<img class="items-img" src="items/36.png">
+			</div>
+			<div class="items-item_left" id="37" onClick="item_description(this.id)">
+				<img class="items-img" src="items/37.png">
+			</div>
+			<div class="items-item_left" id="38" onClick="item_description(this.id)">
+				<img class="items-img" src="items/38.png">
+			</div>
+			<div class="items-item_left" id="39" onClick="item_description(this.id)">
+				<img class="items-img" src="items/39.png">
+			</div>
+			<div class="items-item_left last" id="40" onClick="item_description(this.id)">
+				<img class="items-img" src="items/40.png">
+			</div>
+			<div class="items-item_left" id="41" onClick="item_description(this.id)">
+				<img class="items-img" src="items/41.png">
+			</div>
+			<div class="items-item_left" id="42" onClick="item_description(this.id)">
+				<img class="items-img" src="items/42.png">
+			</div>
+			<div class="items-item_left" id="43" onClick="item_description(this.id)">
+				<img class="items-img" src="items/43.png">
+			</div>
+			<div class="items-item_left" id="44" onClick="item_description(this.id)">
+				<img class="items-img" src="items/44.png">
+			</div>
+			<div class="items-item_left last" id="45" onClick="item_description(this.id)">
+				<img class="items-img" src="items/45.png">
+			</div>
+			<div class="items-item_left" id="46" onClick="item_description(this.id)">
+				<img class="items-img" src="items/46.png">
+			</div>
+			<div class="items-item_left" id="47" onClick="item_description(this.id)">
+				<img class="items-img" src="items/47.png">
+			</div>
+			<div class="items-item_left" id="48" onClick="item_description(this.id)">
+				<img class="items-img" src="items/48.png">
+			</div>
+			<div class="items-item_left" id="49" onClick="item_description(this.id)">
+				<img class="items-img" src="items/49.png">
+			</div>
+			<div class="items-item_left last" id="50" onClick="item_description(this.id)">
+				<img class="items-img" src="items/50.png">
+			</div>
+			<div class="items-item_left" id="51" onClick="item_description(this.id)">
+				<img class="items-img" src="items/51.png">
+			</div>
+			<div class="items-item_left" id="52" onClick="item_description(this.id)">
+				<img class="items-img" src="items/52.png">
+			</div>
+			<div class="items-item_left" id="53" onClick="item_description(this.id)">
+				<img class="items-img" src="items/53.png">
+			</div>
+			<div class="items-item_left" id="54" onClick="item_description(this.id)">
+				<img class="items-img" src="items/54.png">
+			</div>
+			<div class="items-item_left last" id="55" onClick="item_description(this.id)">
+				<img class="items-img" src="items/55.png">
+			</div>
+			<div class="items-item_left" id="56" onClick="item_description(this.id)">
+				<img class="items-img" src="items/56.png">
+			</div>
+			<div class="items-item_left" id="57" onClick="item_description(this.id)">
+				<img class="items-img" src="items/57.png">
+			</div>
+			<div class="items-item_left" id="58" onClick="item_description(this.id)">
+				<img class="items-img" src="items/58.png">
+			</div>
+			<div class="items-item_left" id="59" onClick="item_description(this.id)">
+				<img class="items-img" src="items/59.png">
+			</div>
+			<div class="items-item_left last" id="60" onClick="item_description(this.id)">
+				<img class="items-img" src="items/60.png">
+			</div>
+			<div class="items-item_left" id="61" onClick="item_description(this.id)">
+				<img class="items-img" src="items/61.png">
+			</div>
+			<div class="items-item_left not_exist"></div>
+			<div class="items-item_left" id="62" onClick="item_description(this.id)">
+				<img class="items-img" src="items/62.png">
+			</div>
+			<div class="items-item_left" id="63" onClick="item_description(this.id)">
+				<img class="items-img" src="items/63.png">
+			</div>
+			<div class="items-item_left last" id="64" onClick="item_description(this.id)">
+				<img class="items-img" src="items/64.png">
+			</div>
+			<div class="items-item_left not_exist"></div>
+			<div class="items-item_left not_exist"></div>
+			<div class="items-item_left" id="65" onClick="item_description(this.id)">
+				<img class="items-img" src="items/65.png">
+			</div>
+			<div class="items-item_left" id="66" onClick="item_description(this.id)">
+				<img class="items-img" src="items/66.png">
+			</div>
+			<div class="items-item_left last" id="67" onClick="item_description(this.id)">
+				<img class="items-img" src="items/67.png">
+			</div>
+			<div class="items-item_left not_exist"></div>
+			<div class="items-item_left not_exist"></div>
+			<div class="items-item_left not_exist"></div>
+			<div class="items-item_left" id="68" onClick="item_description(this.id)">
+				<img class="items-img" src="items/68.png">
+			</div>
+			<div class="items-item_left last" id="69" onClick="item_description(this.id)">
+				<img class="items-img" src="items/69.png">
+			</div>
+		</div>
+		<div class="items-item_list_right_content">
+			<div class="items-item_right" id="70" onClick="item_description(this.id)">
+				<img class="items-img" src="items/70.png">
+			</div>
+			<div class="items-item_right" id="71" onClick="item_description(this.id)">
+				<img class="items-img" src="items/71.png">
+			</div>
+			<div class="items-item_right" id="72" onClick="item_description(this.id)">
+				<img class="items-img" src="items/72.png">
+			</div>
+			<div class="items-item_right" id="73" onClick="item_description(this.id)">
+				<img class="items-img" src="items/73.png">
+			</div>
+			<div class="items-item_right" id="74" onClick="item_description(this.id)">
+				<img class="items-img" src="items/74.png">
+			</div>
+			<div class="items-item_right last" id="75" onClick="item_description(this.id)">
+				<img class="items-img" src="items/75.png">
+			</div>
+			<div class="items-item_right" id="76" onClick="item_description(this.id)">
+				<img class="items-img" src="items/76.png">
+			</div>
+			<div class="items-item_right" id="77" onClick="item_description(this.id)">
+				<img class="items-img" src="items/77.png">
+			</div>
+			<div class="items-item_right" id="78" onClick="item_description(this.id)">
+				<img class="items-img" src="items/78.png">
+			</div>
+			<div class="items-item_right" id="79" onClick="item_description(this.id)">
+				<img class="items-img" src="items/79.png">
+			</div>
+			<div class="items-item_right" id="80" onClick="item_description(this.id)">
+				<img class="items-img" src="items/80.png">
+			</div>
+			<div class="items-item_right last" id="81" onClick="item_description(this.id)">
+				<img class="items-img" src="items/81.png">
+			</div>
+			<div class="items-item_right" id="82" onClick="item_description(this.id)">
+				<img class="items-img" src="items/82.png">
+			</div>
+			<div class="items-item_right" id="83" onClick="item_description(this.id)">
+				<img class="items-img" src="items/83.png">
+			</div>
+			<div class="items-item_right" id="84" onClick="item_description(this.id)">
+				<img class="items-img" src="items/84.png">
+			</div>
+			<div class="items-item_right" id="85" onClick="item_description(this.id)">
+				<img class="items-img" src="items/85.png">
+			</div>
+			<div class="items-item_right" id="86" onClick="item_description(this.id)">
+				<img class="items-img" src="items/86.png">
+			</div>
+			<div class="items-item_right last" id="87" onClick="item_description(this.id)">
+				<img class="items-img" src="items/87.png">
+			</div>
+			<div class="items-item_right" id="88" onClick="item_description(this.id)">
+				<img class="items-img" src="items/88.png">
+			</div>
+			<div class="items-item_right" id="89" onClick="item_description(this.id)">
+				<img class="items-img" src="items/89.png">
+			</div>
+			<div class="items-item_right" id="90" onClick="item_description(this.id)">
+				<img class="items-img" src="items/90.png">
+			</div>
+			<div class="items-item_right" id="91" onClick="item_description(this.id)">
+				<img class="items-img" src="items/91.png">
+			</div>
+			<div class="items-item_right" id="92" onClick="item_description(this.id)">
+				<img class="items-img" src="items/92.png">
+			</div>
+			<div class="items-item_right last" id="93" onClick="item_description(this.id)">
+				<img class="items-img" src="items/93.png">
+			</div>
+			<div class="items-item_right" id="94" onClick="item_description(this.id)">
+				<img class="items-img" src="items/94.png">
+			</div>
+			<div class="items-item_right" id="95" onClick="item_description(this.id)">
+				<img class="items-img" src="items/95.png">
+			</div>
+			<div class="items-item_right" id="96" onClick="item_description(this.id)">
+				<img class="items-img" src="items/96.png">
+			</div>
+			<div class="items-item_right" id="97" onClick="item_description(this.id)">
+				<img class="items-img" src="items/97.png">
+			</div>
+			<div class="items-item_right" id="98" onClick="item_description(this.id)">
+				<img class="items-img" src="items/98.png">
+			</div>
+			<div class="items-item_right last" id="99" onClick="item_description(this.id)">
+				<img class="items-img" src="items/99.png">
+			</div>
+			<div class="items-item_right" id="100" onClick="item_description(this.id)">
+				<img class="items-img" src="items/100.png">
+			</div>
+			<div class="items-item_right" id="101" onClick="item_description(this.id)">
+				<img class="items-img" src="items/101.png">
+			</div>
+			<div class="items-item_right" id="102" onClick="item_description(this.id)">
+				<img class="items-img" src="items/102.png">
+			</div>
+			<div class="items-item_right" id="103" onClick="item_description(this.id)">
+				<img class="items-img" src="items/103.png">
+			</div>
+			<div class="items-item_right" id="104" onClick="item_description(this.id)">
+				<img class="items-img" src="items/104.png">
+			</div>
+			<div class="items-item_right last" id="105" onClick="item_description(this.id)">
+				<img class="items-img" src="items/105.png">
+			</div>
+			<div class="items-item_right" id="106" onClick="item_description(this.id)">
+				<img class="items-img" src="items/106.png">
+			</div>
+			<div class="items-item_right" id="107" onClick="item_description(this.id)">
+				<img class="items-img" src="items/107.png">
+			</div>
+			<div class="items-item_right" id="108" onClick="item_description(this.id)">
+				<img class="items-img" src="items/108.png">
+			</div>
+			<div class="items-item_right" id="109" onClick="item_description(this.id)">
+				<img class="items-img" src="items/109.png">
+			</div>
+			<div class="items-item_right" id="110" onClick="item_description(this.id)">
+				<img class="items-img" src="items/110.png">
+			</div>
+			<div class="items-item_right last" id="111" onClick="item_description(this.id)">
+				<img class="items-img" src="items/111.png">
+			</div>
+			<div class="items-item_right" id="112" onClick="item_description(this.id)">
+				<img class="items-img" src="items/112.png">
+			</div>
+			<div class="items-item_right" id="113" onClick="item_description(this.id)">
+				<img class="items-img" src="items/113.png">
+			</div>
+			<div class="items-item_right" id="114" onClick="item_description(this.id)">
+				<img class="items-img" src="items/114.png">
+			</div>
+			<div class="items-item_right" id="115" onClick="item_description(this.id)">
+				<img class="items-img" src="items/115.png">
+			</div>
+			<div class="items-item_right" id="116" onClick="item_description(this.id)">
+				<img class="items-img" src="items/116.png">
+			</div>
+			<div class="items-item_right last" id="117" onClick="item_description(this.id)">
+				<img class="items-img" src="items/117.png">
+			</div>
+			<div class="items-item_right" id="118" onClick="item_description(this.id)">
+				<img class="items-img" src="items/118.png">
+			</div>
+			<div class="items-item_right" id="119" onClick="item_description(this.id)">
+				<img class="items-img" src="items/119.png">
+			</div>
+			<div class="items-item_right" id="120" onClick="item_description(this.id)">
+				<img class="items-img" src="items/120.png">
+			</div>
+			<div class="items-item_right" id="121" onClick="item_description(this.id)">
+				<img class="items-img" src="items/121.png">
+			</div>
+			<div class="items-item_right" id="122" onClick="item_description(this.id)">
+				<img class="items-img" src="items/122.png">
+			</div>
+			<div class="items-item_right last" id="123" onClick="item_description(this.id)">
+				<img class="items-img" src="items/123.png">
+			</div>
+			<div class="items-item_right" id="124" onClick="item_description(this.id)">
+				<img class="items-img" src="items/124.png">
+			</div>
+			<div class="items-item_right" id="125" onClick="item_description(this.id)">
+				<img class="items-img" src="items/125.png">
+			</div>
+			<div class="items-item_right" id="126" onClick="item_description(this.id)">
+				<img class="items-img" src="items/126.png">
+			</div>
+			<div class="items-item_right" id="127" onClick="item_description(this.id)">
+				<img class="items-img" src="items/127.png">
+			</div>
+			<div class="items-item_right" id="128" onClick="item_description(this.id)">
+				<img class="items-img" src="items/128.png">
+			</div>
+			<div class="items-item_right last" id="129" onClick="item_description(this.id)">
+				<img class="items-img" src="items/129.png">
+			</div>
+			<div class="items-item_right" id="130" onClick="item_description(this.id)">
+				<img class="items-img" src="items/130.png">
+			</div>
+			<div class="items-item_right" id="131" onClick="item_description(this.id)">
+				<img class="items-img" src="items/131.png">
+			</div>
+			<div class="items-item_right" id="132" onClick="item_description(this.id)">
+				<img class="items-img" src="items/132.png">
+			</div>
+			<div class="items-item_right" id="133" onClick="item_description(this.id)">
+				<img class="items-img" src="items/133.png">
+			</div>
+			<div class="items-item_right" id="134" onClick="item_description(this.id)">
+				<img class="items-img" src="items/134.png">
+			</div>
+			<div class="items-item_right last" id="135" onClick="item_description(this.id)">
+				<img class="items-img" src="items/135.png">
+			</div>
+			<div class="items-item_right" id="136" onClick="item_description(this.id)">
+				<img class="items-img" src="items/136.png">
+			</div>
+			<div class="items-item_right" id="137" onClick="item_description(this.id)">
+				<img class="items-img" src="items/137.png">
+			</div>
+			<div class="items-item_right" id="138" onClick="item_description(this.id)">
+				<img class="items-img" src="items/138.png">
+			</div>
+			<div class="items-item_right" id="139" onClick="item_description(this.id)">
+				<img class="items-img" src="items/139.png">
+			</div>
+			<div class="items-item_right" id="140" onClick="item_description(this.id)">
+				<img class="items-img" src="items/140.png">
+			</div>
+			<div class="items-item_right last" id="141" onClick="item_description(this.id)">
+				<img class="items-img" src="items/141.png">
+			</div>
+			<div class="items-item_right" id="142" onClick="item_description(this.id)">
+				<img class="items-img" src="items/142.png">
+			</div>
+			<div class="items-item_right" id="143" onClick="item_description(this.id)">
+				<img class="items-img" src="items/143.png">
+			</div>
+			<div class="items-item_right" id="144" onClick="item_description(this.id)">
+				<img class="items-img" src="items/144.png">
+			</div>
+			<div class="items-item_right" id="145" onClick="item_description(this.id)">
+				<img class="items-img" src="items/145.png">
+			</div>
+			<div class="items-item_right" id="146" onClick="item_description(this.id)">
+				<img class="items-img" src="items/146.png">
+			</div>
+			<div class="items-item_right last" id="147" onClick="item_description(this.id)">
+				<img class="items-img" src="items/147.png">
+			</div>
+			<div class="items-item_right" id="148" onClick="item_description(this.id)">
+				<img class="items-img" src="items/148.png">
+			</div>
+			<div class="items-item_right" id="149" onClick="item_description(this.id)">
+				<img class="items-img" src="items/149.png">
+			</div>
+			<div class="items-item_right" id="150" onClick="item_description(this.id)">
+				<img class="items-img" src="items/150.png">
+			</div>
+			<div class="items-item_right" id="151" onClick="item_description(this.id)">
+				<img class="items-img" src="items/151.png">
+			</div>
+			<div class="items-item_right" id="152" onClick="item_description(this.id)">
+				<img class="items-img" src="items/152.png">
+			</div>
+			<div class="items-item_right last" id="153" onClick="item_description(this.id)">
+				<img class="items-img" src="items/153.png">
+			</div>
+			<div class="items-item_right not_exist"></div>
+			<div class="items-item_right not_exist"></div>
+			<div class="items-item_right" id="154" onClick="item_description(this.id)">
+				<img class="items-img" src="items/154.png">
+			</div>
+			<div class="items-item_right" id="155" onClick="item_description(this.id)">
+				<img class="items-img" src="items/155.png">
+			</div>
+			<div class="items-item_right" id="156" onClick="item_description(this.id)">
+				<img class="items-img" src="items/156.png">
+			</div>
+			<div class="items-item_right last" id="157" onClick="item_description(this.id)">
+				<img class="items-img" src="items/157.png">
+			</div>
+		</div>												
+												<script type="text/javascript">
+												function item_description(clicked_id)
+												{
+												    alert(clicked_id);
+												}
+												</script>
+	</div>
+</div>
+</body>
+</html>
