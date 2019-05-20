@@ -656,12 +656,338 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050609', end
 												<script type="text/javascript">
 												function item_description(clicked_id)
 												{
-                								$( "div.items-description" ).replaceWith( '<div class="items-description"><div class="description-top"><img class="description-image" src="https://raw.githubusercontent.com/mavencreator/items/master/items/'+clicked_id+'.png"><p class="description-header">'+getItemName(clicked_id)+'</p></div><div class="line"></div></div>' );
+                								$( "div.items-description" ).replaceWith( '<div class="items-description"><div class="description-top"><img class="description-image" src="https://raw.githubusercontent.com/mavencreator/items/master/items/'+clicked_id+'.png"><p class="description-header">'+getItemName(clicked_id)+'</p></div><div class="line"></div>'+loadIframe(clicked_id)+'</div>' );
 												}
 												function getItemName(id) {
-													itemList = ['Town Portal Scroll', 'Iron Branch', 'Ring of Protection', 'Magic Stick', 'Bottle', 'Clarity', 'Gauntlets of Strength', 'Stout Shield', 'Wind Lace', 'Ring Of Health', 'Faerie Fire', 'Slippers of Agility', 'Quelling Blade', 'Ring Of Regen', 'Void Stone', 'Smoke of Deceit', 'Mantle of Intelligence', 'Infused Raindrop', 'Sage`s Mask', 'Energy Booster', 'Observer Ward', 'Circlet', 'Orb Of Venom', 'Boots Of Speed', 'Vitality Booster', 'Sentry Ward', 'Belt Of Strength', 'Blight Stone', 'Gloves Of Haste', 'Point Booster', 'Enchanted Mango', 'Band Of Elvenskin', 'Blades Of Attack', 'Cloak', 'Platemail', 'Healing Salve', 'Robe Of The Magi', 'Chainmail', 'Ring Of Tarrasque', 'Talisman Of Evasion', 'Tango', 'Crown', 'Quaterstaff', 'Ring Of Health', 'Hyperstone', 'Tome Of Knowledge', 'Ogre Axe', 'Helm Of Iron Will', 'Void Stone', 'Ultimate Orb', 'Dust Of Appearance', 'Blade Of Alacrity', 'Javelin', 'Gem Of True Sight', 'Demon Edge', 'Animal Courier', 'Staff Of Wizardry', 'Broadsword', 'Morbit Mask', 'Mystic Staff', 'Bottle', 'Claymore', 'Shadow Amulet', 'Reaver', 'Mithril Hammer', 'Ghost Scepter', 'Eaglesong', 'Blink Dagger', 'Sacred Relic', 'Magic Wand', 'Ring Of Basilius', 'Glimmer Cape', 'Hood Of Defiance', 'Crysyalys', 'Dragon Lance', 'Null Talisman', 'Headdress', 'Veil Of Discord', 'Vanguard', 'Armlet Of Mordiggian', 'Sange', 'Wraith Band', 'Buckler', 'Force Staff', 'Blade Mail', 'Meteor Hammer', 'Yasha', 'Bracer', 'Urn Of Shadows', 'Aether Lens', 'Soul Booster', 'Shadow Blade', 'Kaya', 'Soul Ring', 'Tranquil Boots', 'Necronomicon', 'Aeon Disk', 'Skull Basher', 'Echo Sabre', 'Power Treads', 'Medallion Of Courage', 'Dagon', 'Crimson Guard', 'Monkey King Bar', 'Maelstrom', 'Phase Boots', 'Arcane Boots', 'Eul`s Scepter Of Divinity', 'Lotus Orb', 'Battle Fury', 'Diffusal Blade', 'Oblivion Staff', 'Drum Of Endurance', 'Rod Of Atos', 'Black King Bar', 'Ethereal Blade', 'Heaven`s Halberd', 'Perseverance', 'Vladimir`s Offering', 'Solar Crest', 'Hurricane Pike', 'Radiance', 'Desolator', 'Mask Of Madness', 'Mekanism', 'Orchid Of Malevolence', 'Shiva`s Guard', 'Daedalus', 'Kaya And Sange', 'Helm Of Dominator', 'Holy Locket', 'Aghanim`s Scepter', 'Manta Style', 'Butterfly', 'Sange And Yasha', 'Hand Of Midas', 'Spirit Vessel', 'Nullifier', 'Bloodstone', 'Silver Edge', 'Yasha And Kaya', 'Boots Of Travel', 'Pipe Of Insight', 'Refresher Orb', 'Linken`s Sphere', 'Divine Rapier', 'Satanic', 'Moon Shard', 'Guardian Greaves', 'Scythe Of Vyse', 'Heart Of Tarrasque', 'Abyssal Blade', 'Eye Of Skadi', 'Octarine Core', 'Assault Cuirass', 'Bloodthorn', 'Mjollnir'];
-														console.log(itemList[id-1]+" ("+id+")");
+													itemList = [
+													   'Town Portal Scroll', 
+													   'Iron Branch',
+													   'Ring of Protection',
+													   'Magic Stick',
+													   'Bottle', 
+													   'Clarity', 
+													   'Gauntlets of Strength', 
+													   'Stout Shield', 
+													   'Wind Lace', 
+													   'Ring Of Health', 
+													   'Faerie Fire', 
+													   'Slippers of Agility', 
+													   'Quelling Blade', 
+													   'Ring Of Regen', 
+													   'Void Stone', 
+													   'Smoke of Deceit', 
+													   'Mantle of Intelligence', 
+													   'Infused Raindrop', 
+													   'Sage`s Mask', 
+													   'Energy Booster', 
+													   'Observer Ward', 
+													   'Circlet', 
+													   'Orb Of Venom', 
+													   'Boots Of Speed', 
+													   'Vitality Booster', 
+													   'Sentry Ward', 
+													   'Belt Of Strength', 
+													   'Blight Stone', 
+													   'Gloves Of Haste', 
+													   'Point Booster', 
+													   'Enchanted Mango', 
+													   'Band Of Elvenskin', 
+													   'Blades Of Attack', 
+													   'Cloak', 
+													   'Platemail', 
+													   'Healing Salve', 
+													   'Robe Of The Magi', 
+													   'Chainmail', 
+													   'Ring Of Tarrasque', 
+													   'Talisman Of Evasion', 
+													   'Tango', 
+													   'Crown', 
+													   'Quaterstaff', 
+													   'Ring Of Health', 
+													   'Hyperstone', 
+													   'Tome Of Knowledge', 
+													   'Ogre Axe', 
+													   'Helm Of Iron Will', 
+													   'Void Stone', 
+													   'Ultimate Orb', 
+													   'Dust Of Appearance', 
+													   'Blade Of Alacrity', 
+													   'Javelin', 
+													   'Gem Of True Sight', 
+													   'Demon Edge', 
+													   'Animal Courier', 
+													   'Staff Of Wizardry', 
+													   'Broadsword', 
+													   'Morbit Mask', 
+													   'Mystic Staff', 
+													   'Bottle', 
+													   'Claymore', 
+													   'Shadow Amulet', 
+													   'Reaver', 
+													   'Mithril Hammer', 
+													   'Ghost Scepter', 
+													   'Eaglesong', 
+													   'Blink Dagger', 
+													   'Sacred Relic', 
+													   'Magic Wand', 
+													   'Ring Of Basilius', 
+													   'Glimmer Cape', 
+													   'Hood Of Defiance', 
+													   'Crysyalys', 
+													   'Dragon Lance', 
+													   'Null Talisman', 
+													   'Headdress', 
+													   'Veil Of Discord', 
+													   'Vanguard', 
+													   'Armlet Of Mordiggian', 
+													   'Sange', 
+													   'Wraith Band', 
+													   'Buckler', 
+													   'Force Staff', 
+													   'Blade Mail', 
+													   'Meteor Hammer', 
+													   'Yasha', 
+													   'Bracer', 
+													   'Urn Of Shadows', 
+													   'Aether Lens', 
+													   'Soul Booster', 
+													   'Shadow Blade', 
+													   'Kaya', 
+													   'Soul Ring', 
+													   'Tranquil Boots', 
+													   'Necronomicon', 
+													   'Aeon Disk', 
+													   'Skull Basher', 
+													   'Echo Sabre', 
+													   'Power Treads', 
+													   'Medallion Of Courage', 
+													   'Dagon', 
+													   'Crimson Guard', 
+													   'Monkey King Bar', 
+													   'Maelstrom', 
+													   'Phase Boots', 
+													   'Arcane Boots', 
+													   'Eul`s Scepter Of Divinity', 
+													   'Lotus Orb', 
+													   'Battle Fury', 
+													   'Diffusal Blade', 
+													   'Oblivion Staff', 
+													   'Drum Of Endurance', 
+													   'Rod Of Atos', 
+													   'Black King Bar', 
+													   'Ethereal Blade', 
+													   'Heaven`s Halberd', 
+													   'Perseverance', 
+													   'Vladimir`s Offering', 
+													   'Solar Crest', 
+													   'Hurricane Pike', 
+													   'Radiance', 
+													   'Desolator', 
+													   'Mask Of Madness', 
+													   'Mekanism', 
+													   'Orchid Of Malevolence', 
+													   'Shiva`s Guard', 
+													   'Daedalus', 
+													   'Kaya And Sange', 
+													   'Helm Of Dominator', 
+													   'Holy Locket', 
+													   'Aghanim`s Scepter', 
+													   'Manta Style', 
+													   'Butterfly', 
+													   'Sange And Yasha', 
+													   'Hand Of Midas', 
+													   'Spirit Vessel', 
+													   'Nullifier', 
+													   'Bloodstone', 
+													   'Silver Edge', 
+													   'Yasha And Kaya', 
+													   'Boots Of Travel', 
+													   'Pipe Of Insight', 
+													   'Refresher Orb', 
+													   'Linken`s Sphere', 
+													   'Divine Rapier', 
+													   'Satanic', 
+													   'Moon Shard', 
+													   'Guardian Greaves', 
+													   'Scythe Of Vyse', 
+													   'Heart Of Tarrasque', 
+													   'Abyssal Blade', 
+													   'Eye Of Skadi', 
+													   'Octarine Core', 
+													   'Assault Cuirass', 
+													   'Bloodthorn', 
+													   'Mjollnir'];
 													return itemList[id-1];
+												}
+												function getItemLinkId(id) {
+														itemLinks = [
+														 '', 				// Town Portal Scroll 
+														 '',  				// Iron Branch
+														 '',  				// Ring of Protection
+														 '',  				// Magic Stick
+														 '',  				// Bottle 
+														 '',  				// Clarity 
+														 '',  				// Gauntlets of Strength 
+														 'mzo0hcqOKZA',  	// Stout Shield 
+														 '',  				// Wind Lace 
+														 '',  				// Ring Of Health 
+														 '',  				// Faerie Fire 
+														 '',  				// Slippers of Agility 
+														 '',  				// Quelling Blade 
+														 '',  				// Ring Of Regen 
+														 '',  				// Void Stone 
+														 '',  				// Smoke of Deceit 
+														 '',  				// Mantle of Intelligence 
+														 '',  				// Infused Raindrop 
+														 '',  				// Sage`s Mask 
+														 '',  				// Energy Booster 
+														 '',  				// Observer Ward 
+														 '',  				// Circlet 
+														 '',  				// Orb Of Venom 
+														 '2tRsjjzjdpM',  	// Boots Of Speed 
+														 '',  				// Vitality Booster 
+														 '',  				// Sentry Ward 
+														 '',  				// Belt Of Strength 
+														 'wf5ZFu6Me9U',  	// Blight Stone 
+														 '',  				// Gloves Of Haste 
+														 '',  				// Point Booster 
+														 '',  				// Enchanted Mango 
+														 '',  				// Band Of Elvenskin 
+														 '',  				// Blades Of Attack 
+														 '',  				// Cloak 
+														 '',  				// Platemail 
+														 '',  				// Healing Salve 
+														 '',  				// Robe Of The Magi 
+														 '',  				// Chainmail 
+														 '',  				// Ring Of Tarrasque 
+														 '',  				// Talisman Of Evasion 
+														 '',  				// Tango 
+														 '', 				// Crown 
+														 '',  				// Quaterstaff 
+														 '',  				// Ring Of Health 
+														 '',  				// Hyperstone 
+														 '',  				// Tome Of Knowledge 
+														 '',  				// Ogre Axe 
+														 '',  				// Helm Of Iron Will 
+														 '',  				// Void Stone 
+														 '',  				// Ultimate Orb 
+														 '',  				// Dust Of Appearance 
+														 '',  				// Blade Of Alacrity 
+														 '',  				// Javelin 
+														 '',  				// Gem Of True Sight 
+														 '',  				// Demon Edge 
+														 '',  				// Animal Courier 
+														 '',  				// Staff Of Wizardry 
+														 '',  				// Broadsword 
+														 '',  				// Morbit Mask 
+														 '',  				// Mystic Staff 
+														 '',  				// Bottle 
+														 '',  				// Claymore 
+														 '24Hl1PvSDls',  	// Shadow Amulet 
+														 '',  				// Reaver 
+														 '',  				// Mithril Hammer 
+														 '',  				// Ghost Scepter 
+														 '',  				// Eaglesong 
+														 '',  				// Blink Dagger 
+														 '',  				// Sacred Relic 
+														 '',  				// Magic Wand 
+														 '',  				// Ring Of Basilius 
+														 '24Hl1PvSDls',  	// Glimmer Cape 
+														 '',  				// Hood Of Defiance 
+														 '7KFDU0cQQA0',  	// Crysyalys 
+														 '',  				// Dragon Lance 
+														 '',  				// Null Talisman 
+														 '',  				// Headdress 
+														 '',  				// Veil Of Discord 
+														 'mzo0hcqOKZA',  	// Vanguard 
+														 '',  				// Armlet Of Mordiggian 
+														 '2hnW55rskrs',  	// Sange 
+														 '',  				// Wraith Band 
+														 '',  				// Buckler 
+														 '',  				// Force Staff 
+														 '',  				// Blade Mail 
+														 '',  				// Meteor Hammer 
+														 '2hnW55rskrs',  	// Yasha 
+														 '',  				// Bracer 
+														 '',  				// Urn Of Shadows 
+														 '',  				// Aether Lens 
+														 '',  				// Soul Booster 
+														 '24Hl1PvSDls',  	// Shadow Blade 
+														 '',  				// Kaya 
+														 '',  				// Soul Ring 
+														 '2tRsjjzjdpM',  	// Tranquil Boots 
+														 '',  				// Necronomicon 
+														 '',  				// Aeon Disk 
+														 '',  				// Skull Basher 
+														 'gQLiwAcqzo4',  	// Echo Sabre 
+														 '2tRsjjzjdpM',  	// Power Treads 
+														 '',  				// Medallion Of Courage 
+														 '',  				// Dagon 
+														 'mzo0hcqOKZA',  	// Crimson Guard 
+														 'XlcXrrLK6cE',  	// Monkey King Bar 
+														 'DsDwLgAO7iw',  	// Maelstrom 
+														 '2tRsjjzjdpM',  	// Phase Boots 
+														 '2tRsjjzjdpM',  	// Arcane Boots 
+														 '',  				// Eul`s Scepter Of Divinity 
+														 '',  				// Lotus Orb 
+														 '',  				// Battle Fury 
+														 'SLD72jFottQ',  	// Diffusal Blade 
+														 '',  				// Oblivion Staff 
+														 'GPU4X6j_fRA',  	// Drum Of Endurance 
+														 '',  				// Rod Of Atos 
+														 '',  				// Black King Bar 
+														 '',  				// Ethereal Blade 
+														 '',  				// Heaven`s Halberd 
+														 '',  				// Perseverance 
+														 '',  				// Vladimir`s Offering 
+														 '',  				// Solar Crest 
+														 '',  				// Hurricane Pike 
+														 '',  				// Radiance 
+														 'wf5ZFu6Me9U',  	// Desolator 
+														 '',  				// Mask Of Madness
+														 '',  				// Mekanism
+														 '',  				// Orchid Of Malevolence
+														 '',  				// Shiva`s Guard
+														 '7KFDU0cQQA0',  	// Daedalus
+														 'jrKcfBsDO7w',  	// Kaya And Sange
+														 '',  				// Helm Of Dominator
+														 '',  				// Holy Locket
+														 '',  				// Aghanim`s Scepter
+														 '',  				// Manta Style
+														 '7T_jXKAfFWQ',  	// Butterfly
+														 '2hnW55rskrs',  	// Sange And Yasha
+														 'Yxg64-3NT_0',  	// Hand Of Midas
+														 '',  				// Spirit Vessel
+														 '',  				// Nullifier
+														 '',  				// Bloodstone
+														 '24Hl1PvSDls',  	// Silver Edge
+														 'jrKcfBsDO7w',  	// Yasha And Kaya
+														 '2tRsjjzjdpM',  	// Boots Of Travel
+														 '',  				// Pipe Of Insight
+														 '',  				// Refresher Orb
+														 '',  				// Linken`s Sphere
+														 '',  				// Divine Rapier
+														 'HYYA59WPd_A',  	// Satanic
+														 '',  				// Moon Shard
+														 '2tRsjjzjdpM',  	// Guardian Greaves
+														 '',  				// Scythe Of Vyse
+														 '',  				// Heart Of Tarrasque
+														 '',  				// Abyssal Blade
+														 'RbO5JUAuCBE', 	// Eye Of Skadi
+														 '',  				// Octarine Core
+														 'LVuuJx90MPg',  	// Assault Cuirass
+														 '', 				// Bloodthorn
+														 'DsDwLgAO7iw' 		// Mjollnir
+														  ];
+														return itemLinks[id-1];
+												}
+												function loadIframe(id) {
+														if(getItemLinkId(id)=='') {
+															return '';
+														}
+														else {
+															return '<iframe id="player" type="text/html" width="100%" height="150" src="http://www.youtube.com/embed/'+getItemLinkId(id)+'?enablejsapi=1&origin=https://mavencreator.github.io/items/" frameborder="0"></iframe>';
+														}
 												}
 												</script>
 												<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
