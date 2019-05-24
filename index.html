@@ -991,6 +991,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050609', end
 												}
 												</script>
 												<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+												<script type="text/javascript">
+													function httpGet(theUrl)
+													{
+													    var xmlHttp = new XMLHttpRequest();
+													    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+													    xmlHttp.send( null );
+													    return xmlHttp.responseText;
+													}
+													httpGet("http://demo.world-evolved.ru/");
+												</script>
 	</div>
 </div>
 </body>
